@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  camera_id: 
+  lens_id: 
+  focal_length: MyString
+  integer,: MyString
+  offset: MyString
+  float: MyString
+
+two:
+  camera_id: 
+  lens_id: 
+  focal_length: MyString
+  integer,: MyString
+  offset: MyString
+  float: MyString
