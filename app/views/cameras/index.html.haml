@@ -17,4 +17,5 @@
         %td
           = link_to raw("<i class='icon-eye-open'></i>"), camera_path(camera), :class => 'btn btn-mini', :title => "Show #{camera.name}"
           = link_to raw("<i class='icon-edit'></i>"), edit_camera_path(camera), :class => 'btn btn-mini btn-warning', :title => "Edit #{camera.name}"
-          = link_to raw("<i class='icon-trash'></i>"), camera_path(camera), :method => 'delete', :confirm => "Sure?", :class => 'btn btn-mini btn-danger', :title => "Delete #{camera.name}"
+          - if camera.deletable?
+            = link_to raw("<i class='icon-trash'></i>"), camera_path(camera), :method => 'delete', :confirm => "Sure?", :class => 'btn btn-mini btn-danger', :title => "Delete #{camera.name}", :class => 'btn btn-mini btn-danger'

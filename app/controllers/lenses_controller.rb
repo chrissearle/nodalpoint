@@ -11,35 +11,40 @@ class LensesController < AuthenticatedController
   end
 
   def create
-     @lens = Lens.new(params[:lens])
-     @lens.user = current_user
+    @lens = Lens.new(params[:lens])
+    @lens.user = current_user
 
-     if @lens.save
-       redirect_to lenses_url, notice: t('lens.create.ok')
-     else
-       render :action => "new"
-     end
-   end
+    if @lens.save
+      redirect_to lenses_url, notice: t('lens.create.ok')
+    else
+      render :action => "new"
+    end
+  end
 
-   def edit
-   end
+  def edit
+  end
 
-   def show
-   end
+  def show
+  end
 
-   def update
-     if @lens.update_attributes(params[:lens])
-       redirect_to lenses_url, notice: t('lens.update.ok')
-     else
-       render :action => "edit"
-     end
-   end
+  def update
+    if @lens.update_attributes(params[:lens])
+      redirect_to lenses_url, notice: t('lens.update.ok')
+    else
+      render :action => "edit"
+    end
+  end
 
-   def destroy
-     @lens.destroy
+  def destroy
+    if @lens.deletable?
+      @lens.destroy
 
-     redirect_to lenses_url, notice: t('lens.delete.ok')
-   end
+      redirect_to lenses_url, notice: t('lens.delete.ok')
+    else
+      redirect_to lenses_url, notice: t('lens.delete.in.use')
+    end
+
+  end
 
 
   private

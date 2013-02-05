@@ -6,4 +6,8 @@ class Lens < ActiveRecord::Base
   belongs_to :user
 
   scope :ordered, :order => 'name ASC, brand ASC'
+
+  def deletable?
+    nodal_points.size() == 0
+  end
 end

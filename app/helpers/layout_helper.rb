@@ -35,4 +35,11 @@ module LayoutHelper
     "<i class='#{white ? "#{icon} icon-white" : icon}'></i> #{text}".html_safe
   end
 
+  def danger_button_class(object)
+    if object.deletable?
+      "btn btn-mini btn-danger"
+    else
+      "btn btn-mini btn-danger disabled"
+    end
+  end
 end

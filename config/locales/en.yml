@@ -11,6 +11,8 @@ en:
       ok: "Camera updated"
     delete:
       ok: "Camera deleted"
+      in:
+        use: "Camera is in use - can't be deleted"
     form:
       legend:
         new: "Create Camera"
@@ -32,6 +34,8 @@ en:
       ok: "Lens updated"
     delete:
       ok: "Lens deleted"
+      in:
+        use: "Lens is in use - can't be deleted"
     form:
       legend:
         new: "Create Lens"

@@ -11,35 +11,39 @@ class CamerasController < AuthenticatedController
   end
 
   def create
-     @camera = Camera.new(params[:camera])
-     @camera.user = current_user
+    @camera = Camera.new(params[:camera])
+    @camera.user = current_user
 
-     if @camera.save
-       redirect_to cameras_url, notice: t('camera.create.ok')
-     else
-       render :action => "new"
-     end
-   end
+    if @camera.save
+      redirect_to cameras_url, notice: t('camera.create.ok')
+    else
+      render :action => "new"
+    end
+  end
 
-   def edit
-   end
+  def edit
+  end
 
-   def show
-   end
+  def show
+  end
 
-   def update
-     if @camera.update_attributes(params[:camera])
-       redirect_to cameras_url, notice: t('camera.update.ok')
-     else
-       render :action => "edit"
-     end
-   end
+  def update
+    if @camera.update_attributes(params[:camera])
+      redirect_to cameras_url, notice: t('camera.update.ok')
+    else
+      render :action => "edit"
+    end
+  end
 
-   def destroy
-     @camera.destroy
+  def destroy
+    if @camera.deletable?
+      @camera.destroy
 
-     redirect_to cameras_url, notice: t('camera.delete.ok')
-   end
+      redirect_to cameras_url, notice: t('camera.delete.ok')
+    else
+      redirect_to cameras_url, notice: t('camera.delete.in.use')
+    end
+  end
 
 
   private
