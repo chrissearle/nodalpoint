@@ -1,0 +1,38 @@
+development:
+  adapter: postgresql
+  database: nodalpoint-dev
+
+test:
+  adapter: postgresql
+  database: nodalpoint-test
+
+production:
+  adapter: postgresql
+  database: nodalpoint
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
