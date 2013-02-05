@@ -9,6 +9,9 @@ class Lens < ActiveRecord::Base
 
   before_validation :set_focal_range_from_name
 
+  validates_presence_of :brand, :name, :minimum_focal_length, :maximum_focal_length
+  validates_numericality_of :minimum_focal_length, :maximum_focal_length
+
   def deletable?
     nodal_points.size() == 0
   end

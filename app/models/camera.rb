@@ -7,6 +7,8 @@ class Camera < ActiveRecord::Base
 
   scope :ordered, :order => 'name ASC, brand ASC'
 
+  validates_presence_of :name, :brand
+
   def deletable?
     nodal_points.size() == 0
   end
