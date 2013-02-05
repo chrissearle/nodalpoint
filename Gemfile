@@ -23,6 +23,14 @@ gem 'simple_form'
 
 gem 'haml'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-flickr'
+gem 'omniauth-github'
+gem 'omniauth-twitter'
+
+gem 'dalli'
+
 gem 'foreman', :require => false
 
 group :development do

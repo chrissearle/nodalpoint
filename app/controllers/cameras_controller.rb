@@ -1,16 +1,18 @@
-class CamerasController < ApplicationController
+class CamerasController < AuthenticatedController
   before_filter :find_camera, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @cameras = Camera.all
+    @cameras = current_user.cameras.all
   end
 
   def new
     @camera = Camera.new
+    @camera.user = current_user
   end
 
   def create
      @camera = Camera.new(params[:camera])
+     @camera.user = current_user
 
      if @camera.save
        redirect_to cameras_url, notice: t('camera.create.ok')
@@ -43,6 +45,6 @@ class CamerasController < ApplicationController
   private
 
   def find_camera
-    @camera = Camera.find(params[:id])
+    @camera = current_user.cameras.find(params[:id])
   end
 end

@@ -1,0 +1,8 @@
+%ul.nav.pull-right
+  - if current_user
+    %li.divider-vertical
+    = render :partial => 'navbar_right_menu_account'
+    %li.divider-vertical
+    %li= link_to t('menu.logout'), logout_path
+  - else
+    %li= link_to t('menu.login'), login_path

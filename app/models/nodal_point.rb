@@ -4,6 +4,8 @@ class NodalPoint < ActiveRecord::Base
   belongs_to :lens
   belongs_to :camera
 
+  belongs_to :user
+
   delegate :name,  :to => :camera, :prefix => true, :allow_nil => true
   delegate :brand, :to => :camera, :prefix => true, :allow_nil => true
   delegate :name,  :to => :lens,   :prefix => true, :allow_nil => true

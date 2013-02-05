@@ -1,57 +1,57 @@
 en:
   site:
-    brand: 'Nodal Point'
+    brand: "Nodal Point"
   camera:
-    items: 'Cameras'
+    items: "Cameras"
     button:
-      add: 'Add Camera'
+      add: "Add Camera"
     create:
-      ok: 'Camera created'
+      ok: "Camera created"
     update:
-      ok: 'Camera updated'
+      ok: "Camera updated"
     delete:
-      ok: 'Camera deleted'
+      ok: "Camera deleted"
     form:
       legend:
-        new: 'Create Camera'
-        edit: 'Update Camera'
+        new: "Create Camera"
+        edit: "Update Camera"
     list:
-      field: 'Key'
-      val: 'Value'
-      back: 'Cameras'
+      field: "Key"
+      val: "Value"
+      back: "Cameras"
     field:
-      name: 'Name'
-      brand: 'Brand'
+      name: "Name"
+      brand: "Brand"
   lens:
-    items: 'Lenses'
+    items: "Lenses"
     button:
-      add: 'Add Lens'
+      add: "Add Lens"
     create:
-      ok: 'Lens created'
+      ok: "Lens created"
     update:
-      ok: 'Lens updated'
+      ok: "Lens updated"
     delete:
-      ok: 'Lens deleted'
+      ok: "Lens deleted"
     form:
       legend:
-        new: 'Create Lens'
-        edit: 'Update Lens'
+        new: "Create Lens"
+        edit: "Update Lens"
     list:
-      field: 'Key'
-      val: 'Value'
-      back: 'Lenses'
+      field: "Key"
+      val: "Value"
+      back: "Lenses"
     field:
-      name: 'Name'
-      brand: 'Brand'
+      name: "Name"
+      brand: "Brand"
   button:
-    edit: 'Edit'
-    delete: 'Delete'
+    edit: "Edit"
+    delete: "Delete"
   show:
     delete:
-      confirm: 'Are you sure?'
+      confirm: "Are you sure?"
   form:
     button:
-      cancel: 'Cancel'
+      cancel: "Cancel"
   nodal_point:
     create:
       ok: "Nodal Point Created"
@@ -79,3 +79,29 @@ en:
     button:
       add: "Add Nodal Point"
     items: "Nodal Points"
+  flash:
+    users:
+      update:
+        ok: "User updated"
+  session:
+    title:
+      logged_in: "My Profile"
+      anonymous: "Login"
+      user: "User"
+      logins: "Logins"
+      add_login: "Add a login"
+      login_with: "Log in via one of the following"
+    link:
+      edit_email: "edit e-mail address"
+  users:
+    title:
+      edit: "Edit"
+  menu:
+    logout: "Log Out"
+    login: "Log In"
+    dropdown:
+      account: "Account"
+  sidenav:
+    link:
+      profile: "My Profile"
+      logout: "Log Out"

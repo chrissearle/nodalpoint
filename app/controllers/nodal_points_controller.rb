@@ -1,16 +1,18 @@
-class NodalPointsController < ApplicationController
+class NodalPointsController < AuthenticatedController
   before_filter :find_nodal_point, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @nodal_points = NodalPoint.preloaded
+    @nodal_points = current_user.nodal_points.preloaded
   end
 
   def new
     @nodal_point = NodalPoint.new
+    @nodal_point.user = current_user
   end
 
   def create
      @nodal_point = NodalPoint.new(params[:nodal_point])
+     @nodal_point.user = current_user
 
      if @nodal_point.save
        redirect_to nodal_points_url, notice: t('nodal_point.create.ok')
@@ -43,6 +45,6 @@ class NodalPointsController < ApplicationController
   private
 
   def find_nodal_point
-    @nodal_point = NodalPoint.find(params[:id])
+    @nodal_point = current_user.nodal_points.find(params[:id])
   end
 end

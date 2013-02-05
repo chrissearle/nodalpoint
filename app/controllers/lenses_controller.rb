@@ -1,16 +1,18 @@
-class LensesController < ApplicationController
+class LensesController < AuthenticatedController
   before_filter :find_lens, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @lenses = Lens.all
+    @lenses = current_user.lenses.all
   end
 
   def new
     @lens = Lens.new
+    @lens.user = current_user
   end
 
   def create
      @lens = Lens.new(params[:lens])
+     @lens.user = current_user
 
      if @lens.save
        redirect_to lenses_url, notice: t('lens.create.ok')
@@ -43,6 +45,6 @@ class LensesController < ApplicationController
   private
 
   def find_lens
-    @lens = Lens.find(params[:id])
+    @lens = current_user.lenses.find(params[:id])
   end
 end

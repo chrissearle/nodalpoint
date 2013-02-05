@@ -11,13 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205164538) do
+ActiveRecord::Schema.define(:version => 20130205184659) do
+
+  create_table "authentications", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "email"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "authentications", ["provider"], :name => "index_authentications_on_provider"
+  add_index "authentications", ["user_id"], :name => "index_authentications_on_user_id"
 
   create_table "cameras", :force => true do |t|
     t.string   "name",       :null => false
     t.string   "brand",      :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   create_table "lenses", :force => true do |t|
@@ -25,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130205164538) do
     t.string   "brand",      :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   create_table "nodal_points", :force => true do |t|
@@ -34,9 +49,20 @@ ActiveRecord::Schema.define(:version => 20130205164538) do
     t.float    "offset",       :null => false
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
   end
 
   add_index "nodal_points", ["camera_id"], :name => "index_nodal_points_on_camera_id"
   add_index "nodal_points", ["lens_id"], :name => "index_nodal_points_on_lens_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name",       :default => ""
+    t.string   "email",      :default => ""
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["name"], :name => "index_users_on_name"
 
 end

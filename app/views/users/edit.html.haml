@@ -1,0 +1,7 @@
+= simple_form_for current_user, :html => {:class => 'form-horizontal' } do |f|
+  %fieldset
+    %legend= t("form.user.title")
+
+    = f.text_field :email, :class => 'text_field'
+
+    = f.submit nil, :class => 'btn btn-primary'

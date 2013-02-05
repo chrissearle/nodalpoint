@@ -2,8 +2,8 @@
   %fieldset
     %legend= legend
 
-    = f.association :camera, :collection => Camera.all
-    = f.association :lens, :collection => Lens.all
+    = f.association :camera, :collection => nodal_point.user.cameras.all
+    = f.association :lens, :collection => nodal_point.user.lenses.all
     = f.input :focal_length
     = f.input :offset
 
