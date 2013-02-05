@@ -1,0 +1,24 @@
+.well
+  %i.icon-plus
+  = link_to t('nodal_point.button.add'), new_nodal_point_path
+
+%table.table.table-bordered.table-striped.table-condensed
+  %thead
+    %tr
+      %th= t('nodal_point.list.camera')
+      %th= t('nodal_point.list.lens')
+      %th= t('nodal_point.list.focal_length')
+      %th= t('nodal_point.list.offset')
+      %th= "Actions"
+
+  %tbody
+    - @nodal_points.each do |nodal_point|
+      %tr
+        %td= "#{nodal_point.camera_name} (#{nodal_point.camera_brand})"
+        %td= "#{nodal_point.lens_name} (#{nodal_point.lens_brand})"
+        %td= nodal_point.focal_length
+        %td= nodal_point.offset
+        %td
+          = link_to raw("<i class='icon-eye-open'></i>"), nodal_point_path(nodal_point), :class => 'btn btn-mini', :title => "Show"
+          = link_to raw("<i class='icon-edit'></i>"), edit_nodal_point_path(nodal_point), :class => 'btn btn-mini btn-warning', :title => "Edit"
+          = link_to raw("<i class='icon-trash'></i>"), nodal_point_path(nodal_point), :method => 'delete', :confirm => "Sure?", :class => 'btn btn-mini btn-danger', :title => "Delete"

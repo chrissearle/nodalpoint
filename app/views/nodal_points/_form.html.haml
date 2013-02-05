@@ -1,0 +1,12 @@
+= simple_form_for nodal_point, :html => { :class => 'form-horizontal' } do |f|
+  %fieldset
+    %legend= legend
+
+    = f.association :camera, :collection => Camera.all
+    = f.association :lens, :collection => Lens.all
+    = f.input :focal_length
+    = f.input :offset
+
+    %div.form-actions
+      = f.button :submit, :class => 'btn-primary'
+      = link_to t("form.button.cancel"), :back, :class => 'btn'

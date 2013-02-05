@@ -1,0 +1,25 @@
+%table.table.table-bordered.table-striped.table-condensed
+  %thead
+    %tr
+      %th= t('nodal_point.list.field')
+      %th= t('nodal_point.list.val')
+
+  %tbody
+    %tr
+      %td= t('nodal_point.field.camera')
+      %td= @nodal_point.camera_name (@nodal_point.camera_brand)
+    %tr
+      %td= t('nodal_point.field.lens')
+      %td= @nodal_point.lens_name (@nodal_point.lens_brand)
+    %tr
+      %td= t('nodal_point.field.focal_length')
+      %td= @nodal_point.focal_length
+    %tr
+      %td= t('nodal_point.field.offset')
+      %td= @nodal_point.offset
+
+
+%div.well
+  = link_to t('nodal_point.list.back'), nodal_points_path, :class => 'btn btn-default'
+  = link_to t('button.edit'), edit_nodal_point_path(@nodal_point), :class => 'btn btn-warning'
+  = link_to t('button.delete'), nodal_point_path(@nodal_point), :method => 'delete', :confirm => t('show.delete.confirm'), :class => 'btn btn-danger'

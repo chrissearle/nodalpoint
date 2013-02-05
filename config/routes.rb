@@ -15,6 +15,7 @@ Nodalpoint::Application.routes.draw do
 
   resources :cameras
   resources :lenses
+  resources :nodal_points
 
   # Sample resource route with options:
   #   resources :products do
@@ -51,7 +52,7 @@ Nodalpoint::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'cameras#index'
+  root :to => 'nodal_points#index'
 
   # See how all your routes lay out with "rake routes"
 

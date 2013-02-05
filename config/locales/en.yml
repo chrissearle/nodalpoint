@@ -52,3 +52,30 @@ en:
   form:
     button:
       cancel: 'Cancel'
+  nodal_point:
+    create:
+      ok: "Nodal Point Created"
+    update:
+      ok: "Nodal Point Updated"
+    delete:
+      ok: "Nodal Point Deleted"
+    list:
+      field: "Key"
+      val: "Value"
+      back: "Nodal Points"
+      camera: "Camera"
+      lens: "Lens"
+      focal_length: "Focal Length"
+      offset: "Offset"
+    field:
+      camera: "Camera"
+      lens: "Lens"
+      focal_length: "Focal Length"
+      offset: "Offset"
+    form:
+      legend:
+        new: "Create Nodal Point"
+        edit: "Update Nodal Point"
+    button:
+      add: "Add Nodal Point"
+    items: "Nodal Points"
