@@ -47,6 +47,7 @@ en:
     field:
       name: "Name"
       brand: "Brand"
+      frange: "Focal Range"
   button:
     edit: "Edit"
     delete: "Delete"

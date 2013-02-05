@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205184659) do
+ActiveRecord::Schema.define(:version => 20130205205411) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -35,11 +35,13 @@ ActiveRecord::Schema.define(:version => 20130205184659) do
   end
 
   create_table "lenses", :force => true do |t|
-    t.string   "name",       :null => false
-    t.string   "brand",      :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",                                :null => false
+    t.string   "brand",                               :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.integer  "user_id"
+    t.integer  "minimum_focal_length", :default => 0, :null => false
+    t.integer  "maximum_focal_length", :default => 0, :null => false
   end
 
   create_table "nodal_points", :force => true do |t|

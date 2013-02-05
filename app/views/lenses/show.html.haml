@@ -11,6 +11,9 @@
     %tr
       %td= t('lens.field.brand')
       %td= @lens.brand
+    %tr
+      %td= t('lens.field.frange')
+      %td= @lens.focal_range
 
 %div.well
   = link_to t('lens.list.back'), lenses_path, :class => 'btn btn-default'
