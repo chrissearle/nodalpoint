@@ -1,0 +1,12 @@
+%div.navbar.navbar-fixed-top.navbar-inverse
+  %div.navbar-inner
+    %div.container
+      %a.btn.btn-navbar{ :'data-toggle' => "collapse", :'data-target' => ".nav-collapse" }
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to link_with_icon("icon-camera", t('site.brand')), root_path, :class => 'brand'
+      %div.nav-collapse
+        = render :partial => 'navbar_left_menu'
+        = render :partial => 'navbar_search_form'
+        = render :partial => 'navbar_right_menu'
