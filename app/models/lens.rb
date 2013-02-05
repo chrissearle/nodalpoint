@@ -29,7 +29,7 @@ class Lens < ActiveRecord::Base
       self.minimum_focal_length = parts.min
       self.maximum_focal_length = parts.max
     else
-      if has_minimum_focal_length?
+      if has_minimum_focal_length? && !has_maximum_focal_length?
         self.maximum_focal_length = self.minimum_focal_length
       end
     end
