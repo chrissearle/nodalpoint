@@ -2,7 +2,7 @@ class LensesController < AuthenticatedController
   before_filter :find_lens, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @lenses = current_user.lenses.all
+    @lenses = current_user.lenses.ordered
   end
 
   def new

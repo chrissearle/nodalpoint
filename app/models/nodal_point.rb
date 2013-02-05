@@ -12,5 +12,8 @@ class NodalPoint < ActiveRecord::Base
   delegate :brand, :to => :lens,   :prefix => true, :allow_nil => true
 
   scope :preloaded, :include => [:camera, :lens]
-
+  
+  def self.ordered
+    NodalPoint.order('cameras.name ASC, lenses.name ASC, focal_length ASC').joins(:camera).joins(:lens).preloaded
+  end
 end

@@ -4,4 +4,6 @@ class Camera < ActiveRecord::Base
   has_many :nodal_points
 
   belongs_to :user
+
+  scope :ordered, :order => 'name ASC, brand ASC'
 end

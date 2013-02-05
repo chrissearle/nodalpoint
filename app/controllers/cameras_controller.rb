@@ -2,7 +2,7 @@ class CamerasController < AuthenticatedController
   before_filter :find_camera, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @cameras = current_user.cameras.all
+    @cameras = current_user.cameras.ordered
   end
 
   def new

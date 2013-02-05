@@ -2,8 +2,8 @@
   %fieldset
     %legend= legend
 
-    = f.association :camera, :collection => nodal_point.user.cameras.all
-    = f.association :lens, :collection => nodal_point.user.lenses.all
+    = f.association :camera, :collection => nodal_point.user.cameras.ordered, :label_method => lambda { |c| "#{c.name} (#{c.brand})" }
+    = f.association :lens, :collection => nodal_point.user.lenses.ordered, :label_method => lambda { |l| "#{l.name} (#{l.brand})" }
     = f.input :focal_length
     = f.input :offset
 

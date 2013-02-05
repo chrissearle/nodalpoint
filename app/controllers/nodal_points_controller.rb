@@ -2,7 +2,7 @@ class NodalPointsController < AuthenticatedController
   before_filter :find_nodal_point, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @nodal_points = current_user.nodal_points.preloaded
+    @nodal_points = current_user.nodal_points.ordered
   end
 
   def new
