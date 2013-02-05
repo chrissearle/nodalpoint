@@ -1,0 +1,18 @@
+%table.table.table-bordered.table-striped.table-condensed
+  %thead
+    %tr
+      %th= t('camera.list.field')
+      %th= t('camera.list.val')
+
+  %tbody
+    %tr
+      %td= t('camera.field.name')
+      %td= @camera.name
+    %tr
+      %td= t('camera.field.brand')
+      %td= @camera.brand
+
+%div.well
+  = link_to t('camera.list.back'), cameras_path, :class => 'btn btn-default'
+  = link_to t('button.edit'), edit_camera_path(@camera), :class => 'btn btn-warning'
+  = link_to t('button.delete'), camera_path(@camera), :method => 'delete', :confirm => t('show.delete.confirm'), :class => 'btn btn-danger'

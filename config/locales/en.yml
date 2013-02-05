@@ -5,3 +5,29 @@ en:
     items: 'Cameras'
     button:
       add: 'Add Camera'
+    create:
+      ok: 'Camera created'
+    update:
+      ok: 'Camera updated'
+    delete:
+      ok: 'Camera deleted'
+    form:
+      legend:
+        new: 'Create Camera'
+        edit: 'Update Camera'
+    list:
+      field: 'Key'
+      val: 'Value'
+      back: 'Cameras'
+    field:
+      name: 'Name'
+      brand: 'Brand'
+  button:
+    edit: 'Edit'
+    delete: 'Delete'
+  show:
+    delete:
+      confirm: 'Are you sure?'
+  form:
+    button:
+      cancel: 'Cancel'
