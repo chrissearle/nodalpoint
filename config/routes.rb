@@ -14,6 +14,7 @@ Nodalpoint::Application.routes.draw do
   #   resources :products
 
   resources :cameras
+  resources :lenses
 
   # Sample resource route with options:
   #   resources :products do

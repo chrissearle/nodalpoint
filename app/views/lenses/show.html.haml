@@ -1,0 +1,18 @@
+%table.table.table-bordered.table-striped.table-condensed
+  %thead
+    %tr
+      %th= t('lens.list.field')
+      %th= t('lens.list.val')
+
+  %tbody
+    %tr
+      %td= t('lens.field.name')
+      %td= @lens.name
+    %tr
+      %td= t('lens.field.brand')
+      %td= @lens.brand
+
+%div.well
+  = link_to t('lens.list.back'), lenses_path, :class => 'btn btn-default'
+  = link_to t('button.edit'), edit_lens_path(@lens), :class => 'btn btn-warning'
+  = link_to t('button.delete'), lens_path(@lens), :method => 'delete', :confirm => t('show.delete.confirm'), :class => 'btn btn-danger'

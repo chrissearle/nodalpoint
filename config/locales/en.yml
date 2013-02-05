@@ -22,6 +22,27 @@ en:
     field:
       name: 'Name'
       brand: 'Brand'
+  lens:
+    items: 'Lenses'
+    button:
+      add: 'Add Lens'
+    create:
+      ok: 'Lens created'
+    update:
+      ok: 'Lens updated'
+    delete:
+      ok: 'Lens deleted'
+    form:
+      legend:
+        new: 'Create Lens'
+        edit: 'Update Lens'
+    list:
+      field: 'Key'
+      val: 'Value'
+      back: 'Lenses'
+    field:
+      name: 'Name'
+      brand: 'Brand'
   button:
     edit: 'Edit'
     delete: 'Delete'
