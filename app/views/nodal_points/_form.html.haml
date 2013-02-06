@@ -2,9 +2,15 @@
   %fieldset
     %legend= legend
 
-    = f.association :camera, :collection => nodal_point.user.cameras.ordered, :label_method => lambda { |c| "#{c.name} (#{c.brand})" }
-    = f.association :lens, :collection => nodal_point.user.lenses.ordered, :label_method => lambda { |l| "#{l.name} (#{l.brand})" }
-    = f.input :focal_length
+    = f.association :camera, :collection => nodal_point.user.cameras.ordered, :label_method => lambda { |c| "#{c.name} (#{c.brand})" }, :include_blank => false
+    %div.control-group.select.required
+      %label.select.required.control-label{ :for => 'nodal_point_lens_id'}
+        %abbr{ :title => "required"}= "*"
+        Lens
+      %div.controls
+        = f.association :lens do
+          = f.select :lens_id, nodal_point.user.lenses.ordered.map{|l| ["#{l.name} (#{l.brand})", l.id, {"data-min" => l.minimum_focal_length, "data-max" => l.maximum_focal_length}]}
+    = f.input :focal_length, input_html: focal_length_html_attributes_for_lens(nodal_point.user.lenses.ordered.first, nodal_point.focal_length)
     = f.input :offset
 
     %div.form-actions

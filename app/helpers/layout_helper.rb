@@ -42,4 +42,17 @@ module LayoutHelper
       "btn btn-mini btn-danger disabled"
     end
   end
+
+  def focal_length_html_attributes_for_lens(lens, focal_length)
+    attributes = {}
+
+    attributes[:min] = lens.minimum_focal_length
+    attributes[:max] = lens.maximum_focal_length
+
+    if focal_length.blank? || focal_length == 0
+      attributes[:value] = lens.minimum_focal_length
+    end
+
+    attributes
+  end
 end
