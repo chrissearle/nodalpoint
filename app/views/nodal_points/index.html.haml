@@ -1,6 +1,8 @@
 .well
-  %i.icon-plus
-  = link_to t('nodal_point.button.add'), new_nodal_point_path
+  - if current_user.lenses.size > 0 && current_user.cameras.size > 0
+    %i.icon-plus= link_to t('nodal_point.button.add'), new_nodal_point_path
+  - else
+    %p= t('nodal_point.requirements')
 
 %table.table.table-bordered.table-striped.table-condensed
   %thead

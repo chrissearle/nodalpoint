@@ -84,6 +84,7 @@ en:
     button:
       add: "Add Nodal Point"
     items: "Nodal Points"
+    requirements: "You must have at least one camera and one lens defined to add a nodal point."
   flash:
     users:
       update:
