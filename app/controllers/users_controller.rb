@@ -12,14 +12,8 @@ class UsersController < AuthenticatedController
     end
   end
 
-  def dropbox_authorize
-    if params[:oauth_token]
-      current_user.authorize
-
-      redirect_to :controller => :sessions, :action => 'index'
-    else
-      redirect_to current_user.get_auth_url(url_for(:action => 'dropbox_authorize'))
-    end
+  def users_brands
+    render :json => (current_user.cameras.map(&:brand) + current_user.lenses.map(&:brand)).select{ |b| b.downcase.starts_with? params[:prefix].downcase }.uniq.sort
   end
 
 end

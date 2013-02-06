@@ -3,7 +3,7 @@
     %legend= legend
 
     = f.input :name
-    = f.input :brand
+    = f.input :brand, input_html: { :class => 'brand-typeahead', :data => { 'typeahead-link' => brand_typeahead_url } }
 
     %div.form-actions
       = f.button :submit, :class => 'btn-primary'

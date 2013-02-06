@@ -3,7 +3,7 @@
     %legend= legend
 
     = f.input :name
-    = f.input :brand
+    = f.input :brand, input_html: { :class => 'brand-typeahead', :data => { 'typeahead-link' => brand_typeahead_url } }
     = f.input :minimum_focal_length
     = f.input :maximum_focal_length
 
