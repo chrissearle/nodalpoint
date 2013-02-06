@@ -85,6 +85,12 @@ en:
       add: "Add Nodal Point"
     items: "Nodal Points"
     requirements: "You must have at least one camera and one lens defined to add a nodal point."
+    errors:
+      lens:
+        owner: "You can only choose from your own lenses"
+        range: "Focal length must be within the range of the lens: %{min}mm - %{max}mm"
+      camera:
+        owner: "You can only choose from your own cameras"
   flash:
     users:
       update:
